@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeopleHub | User Directory</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                <span class="logo-icon">P</span>
+                <span>PeopleHub</span>
+            </div>
+
+            <div class="nav-label">
+                API User Directory
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="hero">
+            <div>
+                <span class="badge">PRODUCTION FRONTEND</span>
+                <h1>Explore the <span>PeopleHub</span> directory.</h1>
+                <p>
+                    Discover user profiles fetched from a public API.
+                    Search, filter and explore user information in a responsive interface.
+                </p>
+            </div>
+        </section>
+
+        <section class="controls">
+            <div class="search-box">
+                <span>⌕</span>
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by name or email..."
+                    autocomplete="off"
+                >
+            </div>
+
+            <select id="genderFilter">
+                <option value="all">All genders</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <button id="refreshBtn" class="refresh-btn">
+                ↻ Refresh
+            </button>
+        </section>
+
+        <section class="status-row">
+            <div>
+                <span class="section-label">API RESULTS</span>
+                <h2>Users</h2>
+            </div>
+
+            <span id="userCount" class="user-count">0 users</span>
+        </section>
+
+        <section id="loading" class="state-box">
+            <div class="spinner"></div>
+            <p>Loading users...</p>
+        </section>
+
+        <section id="error" class="state-box error-state hidden">
+            <div class="error-icon">!</div>
+            <h3>Unable to load users</h3>
+            <p>Something went wrong while fetching the API data.</p>
+            <button id="retryBtn">Try Again</button>
+        </section>
+
+        <section id="userGrid" class="user-grid"></section>
+
+        <section id="emptyState" class="state-box hidden">
+            <div class="empty-icon">⌕</div>
+            <h3>No users found</h3>
+            <p>Try another name, email or filter.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <span>PeopleHub</span>
+            <span>Built with HTML, CSS & JavaScript</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
